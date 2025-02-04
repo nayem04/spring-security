@@ -3,5 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/services/default-auth/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/services/in-memory-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/keycloak/src/main/java" charset="UTF-8" />
   </component>
 </project>
