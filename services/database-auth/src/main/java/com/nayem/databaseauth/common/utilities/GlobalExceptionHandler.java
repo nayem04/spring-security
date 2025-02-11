@@ -1,8 +1,6 @@
 package com.nayem.databaseauth.common.utilities;
 
-import com.nayem.databaseauth.common.exceptions.EnumNotFoundException;
-import com.nayem.databaseauth.common.exceptions.NotFoundException;
-import com.nayem.databaseauth.common.exceptions.NullPasswordException;
+import com.nayem.databaseauth.common.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -18,6 +16,11 @@ import java.util.Map;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+    @ExceptionHandler(AlreadyExistsException.class)
+    public ResponseEntity<String> handleAlreadyExistException(AlreadyExistsException alreadyExistsException) {
+        return new ResponseEntity<>(alreadyExistsException.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
     //Database Related Exceptions Handler
     /*Log the exception to capture details for debugging while ensuring sensitive data is not exposed in the response.*/
     @ExceptionHandler(DataIntegrityViolationException.class)
@@ -57,5 +60,10 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(NullPasswordException.class)
     public ResponseEntity<String> handleNullPasswordException(NullPasswordException nullPasswordException) {
         return new ResponseEntity<>(nullPasswordException.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(UserAlreadyExistsException.class)
+    public ResponseEntity<String> handleUserAlreadyExistsException(UserAlreadyExistsException userAlreadyExistsException) {
+        return new ResponseEntity<>(userAlreadyExistsException.getMessage(), HttpStatus.BAD_REQUEST);
     }
 }
