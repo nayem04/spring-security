@@ -9,11 +9,11 @@ ON CONFLICT (name) DO NOTHING;
 -- Insert sample users
 INSERT INTO users (created, last_updated, account_non_expired, account_non_locked, credentials_non_expired, email,
                    enabled, first_name, last_name, password, phone_number, username)
-VALUES (NOW(), NOW(), TRUE, TRUE, TRUE, 'admin@example.com', TRUE, 'Admin', 'User', 'hashed_password_1', '01700000000',
+VALUES (NOW(), NOW(), TRUE, TRUE, TRUE, 'admin@example.com', TRUE, 'Admin', 'User', '$2a$10$apMKV3umVHtr.s2rXfJd/euZBWUVyA0lOjGe8hdS18fmqGUDiRzBe', '01700000000',
         'admin'),
-       (NOW(), NOW(), TRUE, TRUE, TRUE, 'user@example.com', TRUE, 'Regular', 'User', 'hashed_password_2', '01700000001',
+       (NOW(), NOW(), TRUE, TRUE, TRUE, 'user@example.com', TRUE, 'Regular', 'User', '$2a$10$apMKV3umVHtr.s2rXfJd/euZBWUVyA0lOjGe8hdS18fmqGUDiRzBe', '01700000001',
         'user'),
-       (NOW(), NOW(), TRUE, TRUE, TRUE, 'manager@example.com', TRUE, 'Manager', 'User', 'hashed_password_3', '01700000002',
+       (NOW(), NOW(), TRUE, TRUE, TRUE, 'manager@example.com', TRUE, 'Manager', 'User', '$2a$10$apMKV3umVHtr.s2rXfJd/euZBWUVyA0lOjGe8hdS18fmqGUDiRzBe', '01700000002',
         'manager')
 ON CONFLICT (username) DO NOTHING;
 -- Prevents duplicate insertions
