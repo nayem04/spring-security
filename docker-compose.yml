@@ -1,0 +1,22 @@
+services:
+  postgres:
+    container_name: spring_security_pg
+    image: postgres
+    environment:
+      POSTGRES_USER: nayem
+      POSTGRES_PASSWORD: password
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - spring-security-net
+    restart: unless-stopped   #If something goes wrong(server stop), it will restart
+
+networks:
+  spring-security-net:
+    driver: bridge
+
+volumes:
+  postgres:
