@@ -4,9 +4,9 @@ public final class Router {
     private static final String ROOT = "/api/";
     private static final String VERSION1 = "v1/";
 
-    private static final String HOME = ROOT + VERSION1 + "home";
-    private static final String HELLO_USER = ROOT + VERSION1 + "hello-user";
-    private static final String HELLO_ADMIN = ROOT + VERSION1 + "hello-admin";
+    public static final String HOME = ROOT + VERSION1 + "home";
+    public static final String HELLO_USER = ROOT + VERSION1 + "hello-user";
+    public static final String HELLO_ADMIN = ROOT + VERSION1 + "hello-admin";
 
     public static final class Role {
         public static final String GET_ROLES = ROOT + VERSION1 + "roles";
