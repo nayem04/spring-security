@@ -18,6 +18,6 @@ spring:
     password: ${spring.datasource.password}
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
