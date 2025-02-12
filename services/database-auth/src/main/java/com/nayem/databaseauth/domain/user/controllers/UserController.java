@@ -8,18 +8,16 @@ import com.nayem.databaseauth.common.routing.Router;
 import com.nayem.databaseauth.domain.user.dtos.UserDto;
 import com.nayem.databaseauth.domain.user.services.UserService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 public class UserController implements BaseController<UserDto> {
     private final UserService userService;
-
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
 
     @GetMapping(Router.User.GET_USERS)
     @Override

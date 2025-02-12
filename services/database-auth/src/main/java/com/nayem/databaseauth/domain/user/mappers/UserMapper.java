@@ -13,6 +13,7 @@ import com.nayem.databaseauth.domain.role.repositories.RoleRepository;
 import com.nayem.databaseauth.domain.user.dtos.UserDto;
 import com.nayem.databaseauth.domain.user.entities.User;
 import com.nayem.databaseauth.domain.user.repositories.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
@@ -20,14 +21,10 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Component
+@RequiredArgsConstructor
 public class UserMapper implements BaseMapper<User, UserDto> {
     private final RoleRepository roleRepository;
     private final UserRepository userRepository;
-
-    public UserMapper(RoleRepository roleRepository, UserRepository userRepository) {
-        this.roleRepository = roleRepository;
-        this.userRepository = userRepository;
-    }
 
     @Override
     public UserDto map(User user) {

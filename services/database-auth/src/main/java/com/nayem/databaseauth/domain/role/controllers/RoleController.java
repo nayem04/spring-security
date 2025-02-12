@@ -6,18 +6,16 @@ import com.nayem.databaseauth.common.routing.Router;
 import com.nayem.databaseauth.domain.role.dtos.RoleDto;
 import com.nayem.databaseauth.domain.role.services.RoleService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 public class RoleController implements BaseController<RoleDto> {
     private final RoleService roleService;
-
-    public RoleController(RoleService roleService) {
-        this.roleService = roleService;
-    }
 
     @GetMapping(Router.Role.GET_ROLES)
     @Override

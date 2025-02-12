@@ -11,6 +11,7 @@ import com.nayem.databaseauth.domain.user.dtos.UserDto;
 import com.nayem.databaseauth.domain.user.entities.User;
 import com.nayem.databaseauth.domain.user.mappers.UserMapper;
 import com.nayem.databaseauth.domain.user.repositories.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,14 +19,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class UserService implements BaseService<UserDto>, UserDetailsService {
     private final UserMapper userMapper;
     private final UserRepository userRepository;
-
-    public UserService(UserMapper userMapper, UserRepository userRepository) {
-        this.userMapper = userMapper;
-        this.userRepository = userRepository;
-    }
 
     @Override
     public Page<UserDto> search(String query, int page, int pageSize, Sort.Direction direction, String sortedFieldName, Boolean pageableLimit) {
