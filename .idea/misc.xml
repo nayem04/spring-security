@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/services/in-memory-auth/pom.xml" />
         <option value="$PROJECT_DIR$/services/keycloak/pom.xml" />
         <option value="$PROJECT_DIR$/services/database-auth/pom.xml" />
+        <option value="$PROJECT_DIR$/services/jwt-auth/pom.xml" />
       </list>
     </option>
   </component>
