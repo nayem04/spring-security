@@ -1,4 +1,4 @@
-package com.nayem.databaseauth;
+package com.nayem.databaseauth.domain;
 
 import com.nayem.databaseauth.common.routing.Router;
 import org.springframework.web.bind.annotation.GetMapping;
