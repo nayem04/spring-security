@@ -1,3 +1,16 @@
+server:
+  port: 8084
+
 spring:
   application:
     name: oauth2
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 319637622900-gdce82tfc72qgns043m12os31ls287mp.apps.googleusercontent.com
+            client-secret:
+          github:
+            client-id: Ov23li4FC3Vw0hgMw9U6
+            client-secret:
