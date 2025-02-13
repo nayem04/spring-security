@@ -14,6 +14,19 @@ services:
       - spring-security-net
     restart: unless-stopped   #If something goes wrong(server stop), it will restart
 
+  keycloak:
+    container_name: keycloak-spring-security
+    image: quay.io/keycloak/keycloak:26.1.0
+    ports:
+      - "8080:8080"
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    networks:
+      - spring-security-net
+    command:
+      - "start-dev"
+
 networks:
   spring-security-net:
     driver: bridge
