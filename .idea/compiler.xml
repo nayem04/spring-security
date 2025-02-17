@@ -20,7 +20,7 @@
         </processorPath>
         <module name="keycloak" />
       </profile>
-      <profile name="Annotation profile for oauth2" enabled="true">
+      <profile name="Annotation profile for database-auth" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
